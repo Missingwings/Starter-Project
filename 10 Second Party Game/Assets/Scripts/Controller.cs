@@ -6,23 +6,36 @@ public class Controller : MonoBehaviour
 {
     public float speed = 3.0f;
 
-    Rigidbody2D rigidbody2d;
-    float horizontal;
-    float vertical;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.W))
+        {
+			transform.position += Vector3.up * speed * Time.deltaTime;
+		}
 
-        Vector2 move = new Vector2(horizontal, vertical);
+        if (Input.GetKey(KeyCode.A))
+        {
+			transform.position += Vector3.left * speed * Time.deltaTime;
+		}
+
+        if (Input.GetKey(KeyCode.S))
+        {
+			transform.position += Vector3.down * speed * Time.deltaTime;
+		}
+
+        if (Input.GetKey(KeyCode.D))
+        {
+			transform.position += Vector3.right * speed * Time.deltaTime;
+		}
+        
     }
 }
