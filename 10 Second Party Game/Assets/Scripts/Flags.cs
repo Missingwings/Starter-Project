@@ -10,8 +10,11 @@ public class Flags : MonoBehaviour
 
         if (controller != null)
         {
-            controller.ChangeFlags(1);
-            Destroy(gameObject);
+            if(controller.flags < controller.maxFlags)
+            {
+                controller.ChangeFlags(1);
+                Destroy(gameObject);
+            }
         }
 
     }
