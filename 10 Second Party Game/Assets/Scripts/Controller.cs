@@ -6,7 +6,8 @@ public class Controller : MonoBehaviour
 {
     public float speed = 3.0f;
 
-
+    public int flags { get { return currentFlags; }}
+    int currentFlags;
     
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,10 @@ public class Controller : MonoBehaviour
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
         
+    }
+
+    public void ChangeFlags (int amount)
+    {
+        currentFlags = Mathf.Clamp(currentFlags + amount, 0, 5);
     }
 }
