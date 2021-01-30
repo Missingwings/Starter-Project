@@ -11,12 +11,16 @@ public class Controller : MonoBehaviour
     public int maxFlags = 5;
     public int flags { get { return currentFlags; }}
     int currentFlags;
+
+    public Text winText;
     
     // Start is called before the first frame update
     void Start()
     {
         currentFlags = 0;
         FlagPickup();
+
+        winText.text = "";
     }
 
     // Update is called once per frame
@@ -42,6 +46,10 @@ public class Controller : MonoBehaviour
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
         
+        if (currentFlags >= 5)
+        {
+            winText.text = "~Congratulations! You win!~";
+        }
     }
 
     public void ChangeFlags (int amount)
