@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 685547793940355282}
   - component: {fileID: 6623997943368132151}
   - component: {fileID: 3754889756939087645}
-  - component: {fileID: 649562132600897492}
+  - component: {fileID: 3454339837192974143}
   m_Layer: 0
-  m_Name: BannerTile1
+  m_Name: Flags
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2319679, y: 0.25479102}
   m_EdgeRadius: 0
---- !u!114 &649562132600897492
+--- !u!114 &3454339837192974143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

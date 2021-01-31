@@ -12,7 +12,7 @@ public class Flags : MonoBehaviour
         {
             if(controller.flags < controller.maxFlags)
             {
-                controller.ChangeFlags(1);
+                controller.ChangeFlags(+1);
                 Destroy(gameObject);
             }
         }

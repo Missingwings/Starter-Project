@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class Controller : MonoBehaviour
 {
     public float speed = 3.0f;
-
-    public Text collectFlags;
+    
     public int maxFlags = 5;
     public int flags { get { return currentFlags; }}
     int currentFlags;
 
     public Text winText;
-    
+    public Text collectFlags;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +50,7 @@ public class Controller : MonoBehaviour
         {
             winText.text = "~Congratulations! You win!~";
         }
+
     }
 
     public void ChangeFlags (int amount)

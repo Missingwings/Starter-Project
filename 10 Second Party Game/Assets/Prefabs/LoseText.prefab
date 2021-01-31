@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4257414680595970153
+--- !u!1 &3980522337758063591
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4257414680595970158}
-  - component: {fileID: 4257414680595970156}
-  - component: {fileID: 4257414680595970159}
-  - component: {fileID: 4257414680595970157}
+  - component: {fileID: 3004731639839005051}
+  - component: {fileID: 8044381466022912210}
+  - component: {fileID: 3898116895668503504}
   m_Layer: 5
-  m_Name: TimerText
+  m_Name: LoseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4257414680595970158
+--- !u!224 &3004731639839005051
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4257414680595970153}
+  m_GameObject: {fileID: 3980522337758063591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,31 +34,31 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -445.7, y: 250.3}
-  m_SizeDelta: {x: 322.60736, y: 101.36005}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4257414680595970156
+--- !u!222 &8044381466022912210
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4257414680595970153}
+  m_GameObject: {fileID: 3980522337758063591}
   m_CullTransparentMesh: 0
---- !u!114 &4257414680595970159
+--- !u!114 &3898116895668503504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4257414680595970153}
+  m_GameObject: {fileID: 3980522337758063591}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -67,36 +66,15 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 25
+    m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Timer: '
---- !u!114 &4257414680595970157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4257414680595970153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c19a64551b5cd4e8f9f3312df9cf87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
-  loseText: {fileID: 3898116895668503504, guid: c6ee714f40e95d4448f9462c19be15be,
-    type: 3}
-  winText: {fileID: 7146825301964803695, guid: 8042b89d055689743953376914bb7173, type: 3}
-  controller: {fileID: 4693411336379987024, guid: 6fab322fcf477b243951c8c2fab31d7b,
-    type: 3}
-  collectFlags: {fileID: 7034928247287649799, guid: c5cb128b8278c834c98fe890fd09fda7,
-    type: 3}
-  maxFlags: 5
+    m_LineSpacing: 2
+  m_Text: You lose.
