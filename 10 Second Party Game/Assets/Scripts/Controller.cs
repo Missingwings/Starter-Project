@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Controller : MonoBehaviour
 {
     public float speed = 3.0f;
+    public float timer = 0f;
     
     public int maxFlags = 5;
     public int flags { get { return currentFlags; }}
     int currentFlags;
 
     public Text winText;
+    public Text loseText;
     public Text collectFlags;
 
     // Start is called before the first frame update
@@ -21,11 +23,15 @@ public class Controller : MonoBehaviour
         FlagPickup();
 
         winText.text = "";
+        loseText.text = "";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         if (Input.GetKey(KeyCode.W))
         {
 			transform.position += Vector3.up * speed * Time.deltaTime;
@@ -45,10 +51,18 @@ public class Controller : MonoBehaviour
         {
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
-        
-        if (currentFlags >= 5)
+
+        if (timer >= 10f)
         {
-            winText.text = "~Congratulations! You win!~";
+            if(currentFlags < 5)
+            {
+                loseText.text = "You lose.";               
+                Destroy (gameObject);
+            }
+            if (currentFlags >= 5)
+            {
+                winText.text = "~Congratulations! You win!~";
+            }
         }
 
     }
@@ -63,4 +77,9 @@ public class Controller : MonoBehaviour
     {
         collectFlags.text = "Flags: " + currentFlags.ToString();
     }
+
+   // void LoseGame()
+   // {
+    
+   // }
 }

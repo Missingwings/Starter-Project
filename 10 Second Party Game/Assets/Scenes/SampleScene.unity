@@ -31593,6 +31593,11 @@ PrefabInstance:
       propertyPath: winText
       value: 
       objectReference: {fileID: 1425948564}
+    - target: {fileID: 8054886765381577786, guid: 6fab322fcf477b243951c8c2fab31d7b,
+        type: 3}
+      propertyPath: loseText
+      value: 
+      objectReference: {fileID: 260338975}
     - target: {fileID: 8274702279402147395, guid: 6fab322fcf477b243951c8c2fab31d7b,
         type: 3}
       propertyPath: m_LocalPosition.x
