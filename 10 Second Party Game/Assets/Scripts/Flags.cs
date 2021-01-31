@@ -14,10 +14,10 @@ public class Flags : MonoBehaviour
         {
             if(controller.flags < controller.maxFlags)
             {
-                controller.ChangeFlags(+1);
-                Destroy(gameObject);
-
                 controller.PlaySound(pickupFlags);
+                
+                controller.ChangeFlags(+1);
+                Destroy(gameObject); 
             }
         }
 
