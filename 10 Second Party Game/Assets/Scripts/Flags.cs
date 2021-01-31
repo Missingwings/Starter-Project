@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Flags : MonoBehaviour
 {
+    public AudioClip collectedClip;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Controller controller = other.GetComponent<Controller>();
@@ -14,6 +16,8 @@ public class Flags : MonoBehaviour
             {
                 controller.ChangeFlags(+1);
                 Destroy(gameObject);
+
+                controller.PlaySound(collectedClip);
             }
         }
 

@@ -97,11 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  timer: 0
   maxFlags: 5
-  destroy: {fileID: 5044171045311368997, guid: 4475f4917ce9b0e469f96aba5dbd786a, type: 3}
   winText: {fileID: 7146825301964803695, guid: 8042b89d055689743953376914bb7173, type: 3}
+  loseText: {fileID: 0}
   collectFlags: {fileID: 7034928247287649799, guid: c5cb128b8278c834c98fe890fd09fda7,
     type: 3}
+  pickupFlag: {fileID: 8300000, guid: c5086c04bf9532e4d853a770fef6adc1, type: 3}
+  loseSound: {fileID: 8300000, guid: 314afc8adb72b9549b9e902d001aae6c, type: 3}
+  winSound: {fileID: 8300000, guid: dd585ab204b3e164ea422ab090bc83a6, type: 3}
 --- !u!50 &3463461766730544186
 Rigidbody2D:
   serializedVersion: 4

@@ -16,16 +16,26 @@ public class Controller : MonoBehaviour
     public Text loseText;
     public Text collectFlags;
 
+    AudioSource audioSource;
+    public AudioClip loseSound;
+    public AudioClip winSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         currentFlags = 0;
         FlagPickup();
 
         winText.text = "";
-        loseText.text = "";
-        
+        loseText.text = "";     
     }
+
+    public void PlaySound(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip);
+        }
 
     // Update is called once per frame
     void Update()
@@ -58,13 +68,16 @@ public class Controller : MonoBehaviour
             {
                 loseText.text = "You lose.";               
                 Destroy (gameObject);
+
+                PlaySound(loseSound);
             }
             if (currentFlags >= 5)
             {
                 winText.text = "~Congratulations! You win!~";
+
+                PlaySound(winSound);
             }
         }
-
     }
 
     public void ChangeFlags (int amount)
@@ -77,9 +90,4 @@ public class Controller : MonoBehaviour
     {
         collectFlags.text = "Flags: " + currentFlags.ToString();
     }
-
-   // void LoseGame()
-   // {
-    
-   // }
 }
