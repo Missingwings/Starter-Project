@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1488df56295c34a8760c34fd82b2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedClip: {fileID: 8300000, guid: c5086c04bf9532e4d853a770fef6adc1, type: 3}
+  pickupFlags: {fileID: 8300000, guid: c5086c04bf9532e4d853a770fef6adc1, type: 3}

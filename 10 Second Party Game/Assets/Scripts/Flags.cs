@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Flags : MonoBehaviour
 {
-    public AudioClip collectedClip;
+    public AudioClip pickupFlags;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +17,7 @@ public class Flags : MonoBehaviour
                 controller.ChangeFlags(+1);
                 Destroy(gameObject);
 
-                controller.PlaySound(collectedClip);
+                controller.PlaySound(pickupFlags);
             }
         }
 

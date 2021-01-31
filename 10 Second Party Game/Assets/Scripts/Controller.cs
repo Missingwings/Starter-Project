@@ -23,7 +23,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
 
         currentFlags = 0;
         FlagPickup();
@@ -40,8 +40,28 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime;       
 
+        if (timer >= 10f)
+        {
+            if(currentFlags < 5)
+            {
+                PlaySound(loseSound);
+
+                loseText.text = "You lose.";               
+                null Movement();   
+            }
+            if (currentFlags >= 5)
+            {
+                winText.text = "~Congratulations! You win!~";
+
+                PlaySound(winSound);
+            }
+        }
+    }
+
+    void Movement()
+    {
         if (Input.GetKey(KeyCode.W))
         {
 			transform.position += Vector3.up * speed * Time.deltaTime;
@@ -61,23 +81,6 @@ public class Controller : MonoBehaviour
         {
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
-
-        if (timer >= 10f)
-        {
-            if(currentFlags < 5)
-            {
-                loseText.text = "You lose.";               
-                Destroy (gameObject);
-
-                PlaySound(loseSound);
-            }
-            if (currentFlags >= 5)
-            {
-                winText.text = "~Congratulations! You win!~";
-
-                PlaySound(winSound);
-            }
-        }
     }
 
     public void ChangeFlags (int amount)
